@@ -86,6 +86,7 @@ router.post('/api/createComment', async function (ctx) {
   params.append('thread', thread)
   params.append('author_name', author_name)
   params.append('author_email', author_email)
+  params.append('state', 'approved')
   let result
   try {
     result = await request('https://disqus.com/api/3.0/posts/create.json', {
